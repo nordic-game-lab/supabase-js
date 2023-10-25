@@ -22,19 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           registry-url: https://registry.npmjs.org
-
       - run: |
           npm ci
           npm run build
-          
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "exports.createClient = createClient;"
-          replace: "module.exports = createClient;"
-          include: "**index.js"
-          
-      - name: Create a release
-        run: npm publish --public
+      - run: npm publish --public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
