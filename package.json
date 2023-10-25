@@ -10,7 +10,7 @@
   "homepage": "https://github.com/nordic-game-lab/supabase-js",
   "bugs": "https://github.com/nordic-game-lab/supabase-js/issues",
   "license": "MIT",
-  "author": "Supabase",
+  "author": "nordic-game-lab",
   "files": [
     "dist",
     "src"
@@ -19,7 +19,7 @@
   "module": "dist/module/index.js",
   "types": "dist/module/index.d.ts",
   "sideEffects": false,
-  "repository": "supabase/supabase-js",
+  "repository": "nordic-game-lab/supabase-js",
   "scripts": {
     "clean": "rimraf dist docs/v2",
     "format": "prettier --write \"{src,test}/**/*.ts\"",
