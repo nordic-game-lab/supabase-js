@@ -25,7 +25,7 @@
     "format": "prettier --write \"{src,test}/**/*.ts\"",
     "build": "run-s clean format build:*",
     "build:main": "tsc -p tsconfig.json",
-    "build:module": "tsc -p tsconfig.module.json && sudo apt update && sudo apt install sed -y && sed -y 's/exports.createClient/module.exports/g' dist/main/index.js",
+    "build:module": "tsc -p tsconfig.module.json && sed -i 's/exports.createClient/module.exports/g' dist/main/index.js",
     "build:umd": "webpack",
     "types-generate": "dts-gen -m '@supabase/supabase-js' -s",
     "test": "jest --runInBand",
