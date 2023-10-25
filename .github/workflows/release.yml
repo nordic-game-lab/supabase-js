@@ -28,7 +28,14 @@ jobs:
       - run: |
           npm ci
           npm run build
-
+          
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "exports.createClient = createClient;"
+          replace: "module.exports = createClient;"
+          include: "**index.js"
+          
       - name: Create a release
         run: npx semantic-release@^18.0.0
         env:
