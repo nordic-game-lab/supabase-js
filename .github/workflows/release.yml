@@ -7,24 +7,21 @@ on:
 
 jobs:
   release:
-    name: Release / Node ${{ matrix.node }}
-    strategy:
-      matrix:
-        node: ['18']
-
+    name: Release / Node 18
     runs-on: ubuntu-latest
-
+    permissions: 
+      id-token: write
     steps:
       - uses: actions/checkout@v2
 
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18
           registry-url: https://registry.npmjs.org
       - run: |
           npm ci
           npm run build
-      - run: npm publish --public
+      - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
