@@ -1,5 +1,5 @@
 {
-  "name": "@nordicgamelab/supabase-js",
+  "name": "@nordic-game-lab/supabase-js",
   "version": "1.0.0",
   "description": "Isomorphic Javascript client for Supabase",
   "keywords": [
